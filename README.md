@@ -12,6 +12,7 @@ This project implements a **minimal** neural network in C++ (clang++) for classi
 
 ## Performance
 
+M2 Max (single cpu core)
 ```bash
 Epoch 1, Accuracy: 94.4583%, Avg Loss: 0.299816, Time: 2.484 seconds
 Epoch 2, Accuracy: 95.85%, Avg Loss: 0.135207, Time: 2.54 seconds
