@@ -1,6 +1,6 @@
-# miniMNIST-c
+# miniMNIST-cpp
 
-This project implements a **minimal** neural network in C for classifying handwritten digits from the [MNIST dataset](https://www.kaggle.com/datasets/hojjatk/mnist-dataset?resource=download). The entire implementation is  **~200 lines of code** and uses only the standard C library.
+This project implements a **minimal** neural network in C++ (clang++) for classifying handwritten digits from the [MNIST dataset](https://www.kaggle.com/datasets/hojjatk/mnist-dataset?resource=download). The entire implementation is  **~270 lines of code**.
 
 ## Features
 
@@ -13,31 +13,31 @@ This project implements a **minimal** neural network in C for classifying handwr
 ## Performance
 
 ```bash
-Epoch 1, Accuracy: 95.61%, Avg Loss: 0.2717, Time: 2.61 seconds
-Epoch 2, Accuracy: 96.80%, Avg Loss: 0.1167, Time: 2.62 seconds
-Epoch 3, Accuracy: 97.21%, Avg Loss: 0.0766, Time: 2.66 seconds
-Epoch 4, Accuracy: 97.38%, Avg Loss: 0.0550, Time: 2.64 seconds
-Epoch 5, Accuracy: 97.49%, Avg Loss: 0.0397, Time: 2.64 seconds
-Epoch 6, Accuracy: 97.47%, Avg Loss: 0.0285, Time: 2.65 seconds
-Epoch 7, Accuracy: 97.47%, Avg Loss: 0.0205, Time: 2.66 seconds
-Epoch 8, Accuracy: 97.72%, Avg Loss: 0.0151, Time: 2.66 seconds
-Epoch 9, Accuracy: 97.88%, Avg Loss: 0.0112, Time: 2.67 seconds
-Epoch 10, Accuracy: 97.82%, Avg Loss: 0.0084, Time: 2.67 seconds
-Epoch 11, Accuracy: 97.88%, Avg Loss: 0.0063, Time: 2.68 seconds
-Epoch 12, Accuracy: 97.92%, Avg Loss: 0.0049, Time: 2.68 seconds
-Epoch 13, Accuracy: 97.92%, Avg Loss: 0.0039, Time: 2.69 seconds
-Epoch 14, Accuracy: 98.02%, Avg Loss: 0.0032, Time: 2.69 seconds
-Epoch 15, Accuracy: 98.06%, Avg Loss: 0.0027, Time: 2.70 seconds
-Epoch 16, Accuracy: 98.09%, Avg Loss: 0.0024, Time: 2.70 seconds
-Epoch 17, Accuracy: 98.11%, Avg Loss: 0.0021, Time: 2.69 seconds
-Epoch 18, Accuracy: 98.12%, Avg Loss: 0.0019, Time: 2.70 seconds
-Epoch 19, Accuracy: 98.16%, Avg Loss: 0.0017, Time: 2.70 seconds
-Epoch 20, Accuracy: 98.17%, Avg Loss: 0.0015, Time: 2.71 seconds
+Epoch 1, Accuracy: 94.4583%, Avg Loss: 0.299816, Time: 2.484 seconds
+Epoch 2, Accuracy: 95.85%, Avg Loss: 0.135207, Time: 2.54 seconds
+Epoch 3, Accuracy: 96.525%, Avg Loss: 0.0925771, Time: 2.543 seconds
+Epoch 4, Accuracy: 96.8083%, Avg Loss: 0.0687637, Time: 2.545 seconds
+Epoch 5, Accuracy: 96.9917%, Avg Loss: 0.0524336, Time: 2.55 seconds
+Epoch 6, Accuracy: 97.05%, Avg Loss: 0.0404643, Time: 2.555 seconds
+Epoch 7, Accuracy: 97.2167%, Avg Loss: 0.0313959, Time: 2.555 seconds
+Epoch 8, Accuracy: 97.3583%, Avg Loss: 0.0246683, Time: 2.551 seconds
+Epoch 9, Accuracy: 97.4667%, Avg Loss: 0.0193795, Time: 2.56 seconds
+Epoch 10, Accuracy: 97.5583%, Avg Loss: 0.0154899, Time: 2.564 seconds
+Epoch 11, Accuracy: 97.5583%, Avg Loss: 0.0125247, Time: 2.56 seconds
+Epoch 12, Accuracy: 97.5917%, Avg Loss: 0.0101825, Time: 2.558 seconds
+Epoch 13, Accuracy: 97.6417%, Avg Loss: 0.00837908, Time: 2.582 seconds
+Epoch 14, Accuracy: 97.6667%, Avg Loss: 0.00693848, Time: 2.567 seconds
+Epoch 15, Accuracy: 97.6917%, Avg Loss: 0.00580494, Time: 2.56 seconds
+Epoch 16, Accuracy: 97.6833%, Avg Loss: 0.00494942, Time: 2.553 seconds
+Epoch 17, Accuracy: 97.65%, Avg Loss: 0.00428182, Time: 2.568 seconds
+Epoch 18, Accuracy: 97.6667%, Avg Loss: 0.00373187, Time: 2.578 seconds
+Epoch 19, Accuracy: 97.65%, Avg Loss: 0.00329977, Time: 2.56 seconds
+Epoch 20, Accuracy: 97.6583%, Avg Loss: 0.00294499, Time: 2.558 seconds
 ```
 
 ## Prerequisites
 
-- GCC compiler
+- clang++ compiler
 - MNIST dataset files:
   - `train-images.idx3-ubyte`
   - `train-labels.idx1-ubyte`
@@ -45,7 +45,7 @@ Epoch 20, Accuracy: 98.17%, Avg Loss: 0.0015, Time: 2.71 seconds
 ## Compilation
 
 ```bash
-gcc -O3 -march=native -ffast-math -o nn nn.c -lm
+clang++ -O3 -march=native -ffast-math -std=c++17 -o nn nn.cpp -lm
 ```
 
 ## Usage
@@ -62,7 +62,7 @@ The program will train the neural network on the MNIST dataset and output the ac
 
 ## Configuration
 
-You can adjust the following parameters in `nn.c`:
+You can adjust the following parameters in `nn.cpp`:
 
 - `HIDDEN_SIZE`: Number of neurons in the hidden layer
 - `LEARNING_RATE`: Learning rate for SGD
